@@ -7,3 +7,5 @@ function display_counter(){
 }
 
 window.addEventListener("load",display_counter());
+
+//est ce que les commits fonctionnent?
