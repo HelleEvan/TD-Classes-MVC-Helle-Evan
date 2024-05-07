@@ -1,4 +1,6 @@
-import {counter} from "./../models/counter.js"
+import { Controller } from "../controllers/controller.js";
+import {counter} from "../models/counter.js"
+import {View} from "../views/view.js"
 
 
 function display_counter(){
@@ -6,6 +8,9 @@ function display_counter(){
     console.log(objet.counter);
 }
 
+function CV(){
+    const controller = new Controller();
+    const view = new View(controller);
+}
 window.addEventListener("load",display_counter());
-
-//est ce que les commits fonctionnent?
+window.addEventListener("load",CV());

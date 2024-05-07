@@ -1,20 +1,19 @@
-import { Observer } from "./observer";
+import { Observer } from "../pattern/observer.js";
 
 export class Notifier{
-    #observer;
     #observers;
 
     constructor(){
-        this.#observer = new Observer();
         this.#observers = [];
     }
     addObserver(observer){
         this.#observers.push(observer);
     
     }
+
     notify(){
-        for(this.#observer in this.#observers){
-            this.#observer.notify();
+        for(let observer in this.#observers){
+            observer.notify();
         }
     }
 }
