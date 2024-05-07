@@ -1,10 +1,10 @@
-class counter{
+export class counter{
     #counter;
 
     constructor(){
         this.#counter = 0;
     }
-    getValue(){
+    get counter(){
         return this.#counter;
     }
     incrementValue(){

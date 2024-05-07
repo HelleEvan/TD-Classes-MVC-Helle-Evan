@@ -1,8 +1,9 @@
-import {getCounter} from "./../models/counter.js"
+import {counter} from "./../models/counter.js"
+
 
 function display_counter(){
-    let counter = getCounter();
-    console.log(counter);
+    let objet = new counter();
+    console.log(objet.counter);
 }
 
 window.addEventListener("load",display_counter());
