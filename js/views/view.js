@@ -1,21 +1,24 @@
-import { Controller } from "../controllers/controller.js";
-import { Observer } from "../pattern/observer.js";
+import { Observer } from "./../pattern/observer.js";
 
 export class View extends Observer{
     #controller;
-    
-    constructor(controller2){
+    constructor(controller1){
         super();
-        this.#controller = controller2;
-        this.#controller.addObserver(this);
-        let bouton_increment=document.querySelector("button#btn-increment");
-        bouton_increment.addEventListener("click",()=>{
+        this.#controller = controller1;
+        let button_inc = document.querySelector("#btn-increment");
+        let button_dec = document.querySelector("#btn-decrement");
+        button_inc.addEventListener("click", ()=>{
             this.#controller.incrementCounter();
+            this.notify();
         });
+        button_dec.addEventListener("click", ()=>{
+            this.#controller.decrementCounter();
+            this.notify();
+        });
+
     }
     notify(){
-        const compteur = this.#controller.getCounterValue();
-        let display = document.querySelector("p#txt-counter");
-        display.innerText = compteur;
+        let text = document.querySelector("#txt-counter");
+        text.innerText = this.#controller.getCounterValue();
     }
 }

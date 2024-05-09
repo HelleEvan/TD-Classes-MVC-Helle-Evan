@@ -1,16 +1,16 @@
-export class counter{
-    #counter;
-
+export class Counter{
+    #value
     constructor(){
-        this.#counter = 0;
+        this.#value = 0;
     }
-    get counter(){
-        return this.#counter;
+    get value(){
+        return this.#value;
     }
     incrementValue(){
-        this.#counter +=1;
+        this.#value+=1;
     }
     decrementValue(){
-        this.#counter -=1;
+        this.#value-=1;
     }
+    
 }
